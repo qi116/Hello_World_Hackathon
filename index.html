@@ -1,6 +1,11 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="./main.css">
 		<script src="Functions.js"></script>
 	</head>
@@ -18,11 +23,11 @@
 		        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="#">Link</a>
+		        <a class="nav-link" href="#">About Us</a>
 		      </li>
 		      <li class="nav-item dropdown">
 		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		          Dropdown
+		          Features
 		        </a>
 		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 		          <a class="dropdown-item" href="#">Action</a>
@@ -30,9 +35,6 @@
 		          <div class="dropdown-divider"></div>
 		          <a class="dropdown-item" href="#">Something else here</a>
 		        </div>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link disabled" href="#">Disabled</a>
 		      </li>
 		    </ul>
 		    <form class="form-inline my-2 my-lg-0">
@@ -43,31 +45,86 @@
 		</nav>
 
 		<div class="center">
-			<p>Welcome to our budgeting app</p>
-			
-			<div class="form-check">
-			  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-			  <label class="form-check-label" for="flexRadioDefault1">
-			    Monthly
-			  </label>
-			</div>
-			<div class="form-check">
-			  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-			  <label class="form-check-label" for="flexRadioDefault2">
-			    Weekly
-			  </label>
-			</div>
-
 			<br>
-			<button onclick="makeWord();">Click Me!</button>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+			  Configure
+			</button>
 			<p id="word" style="display: none;">This will appear</p>
 			<br><br>
-			<label>Enter your Income per year</label>
-			<br>
-			<input type="text" id="userIncome"></input>
-			<button id="userIncomeBtn" onclick="getIncome();"> Enter </button>
+			
+			<form class="form-inline">
+			  <div class="form-group mx-sm-3 mb-2">
+			    <label for="inputPassword2" class="sr-only">Enter Income</label>
+			    <input type="password" class="form-control" id="inputPassword2" placeholder="Enter Income">
+			  </div>
+			  <button type="submit" class="btn btn-success mb-2">Submit</button>
+			</form>
 		</div>
 		
+		<!-- Modal #1 - Configurations Modal -->
+
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="exampleModalLabel">Configurations</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      		<h4>How Do You Want to Budget?</h4>
+		      		<br>
+		      		<div class="form-check">
+		      		  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+		      		  <label class="form-check-label" for="flexRadioDefault1">
+		      		    Yearly
+		      		  </label>
+		      		</div>
+		      		<div class="form-check">
+		      		  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+		      		  <label class="form-check-label" for="flexRadioDefault2">
+		      		    Monthly
+		      		  </label>
+		      		</div>
+		      		<div class="form-check">
+		      		  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+		      		  <label class="form-check-label" for="flexRadioDefault2">
+		      		    Weekly
+		      		  </label>
+		      		</div>
+		      		<br><br>
+		      		<h4>What is the Currency?</h4>
+		      		<br>
+
+		       		<div class="dropdown show">
+		       		  <a class="btn btn-warning dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		       		    Select Currency
+		       		  </a>
+
+		       		  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+		       		    <li><a class="dropdown-item" href="#">USD</a></li>
+		       		    <li><a class="dropdown-item" href="#">EUR</a></li>
+		       		    <li><a class="dropdown-item" href="#">GBP</a></li>
+		       		    <li><a class="dropdown-item" href="#">CHF</a></li>
+		       		    <li><a class="dropdown-item" href="#">CAD</a></li>
+
+		       		  </div>
+		       		</div>
+		       		<br><br>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary">Save changes</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 
 	</body>
+	<script type="text/javascript">
+		$(".dropdown-menu li a").click(function(){
+		  $(".btn:first-child").html($(this).text()+' <span class="caret"></span>');
+		});
+	</script>
 </html>
