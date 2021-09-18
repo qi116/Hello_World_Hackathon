@@ -1,6 +1,13 @@
 var income;
 var monthlySpending;
 var currency = "USD";
+var totalBudget = 0;
+
+
+var spendingType = {
+	"Housing:0, Food/Drink:0, Education, Bills/Utilities, Shopping, Entertainment, Other"};
+
+
 function makeWord(){
 	var word = document.getElementById("word");
 	word.style.display = "block";
@@ -13,3 +20,4 @@ function getIncome(){
 function getCurrencyType(){
 	console.log($('#moneyDropdown').val($(this).html()));
 }
+
