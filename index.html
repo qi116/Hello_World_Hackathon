@@ -1,29 +1,29 @@
 <html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="./main.css">
-		<script src="Functions.js"></script>
-	</head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./main.css">
+	<script src="Functions.js"></script>
+</head>
 
-	<body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		  
-		  <img src = "BudgeMeLogo.png" id = "logo" class = "epicLogo" >
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		  </button>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-		  <div class="collapse navbar-collapse" id="navbarSupportedContent">			  
-		    <ul class=" nav navbar-nav ml-auto">
-		      <li class="nav-item active">
-		        <a class="nav-link" href="#">About Us</a>
-		      </li>
+		<img src = "BudgeMeLogo.png" id = "logo" class = "epicLogo" >
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">			  
+			<ul class=" nav navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">About Us</a>
+				</li>
 		      <!-- <li class="nav-item dropdown">
 		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		          Features
@@ -34,197 +34,196 @@
 		          <div class="dropdown-divider"></div>
 		          <a class="dropdown-item" href="#">Something else here</a>
 		        </div>
-		      </li> -->
-		    </ul>
+		    </li> -->
+		</ul>
 		    <!-- <form class="form-inline my-2 my-lg-0">
 		      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-		    </form> -->
-		  </div>
-		</nav>
-		 
-		<div class="left">
-			<br>
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-			  Configure
-			</button>
-			<p id="word" style="display: none;">This will appear</p>
-			<br><br>
-			
-			
+		  </form> -->
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-md">
+				<div class="left">
+					<br>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+						Configure
+					</button>
+					<p id="word" style="display: none;">This will appear</p>
+					<br><br>
+				</div>
+				<div>
+					<input class = "left" id = "Spending" placeholder = "0.00"></input> 
+					<select name="spendingType" id="spendingType">
+						<option value="H">Housing</option>
+						<option value="F">Food</option>
+						<option value="T">Transporation</option>
+						<option value="En">Entertainment</option>
+						<option value="Ed"> Education </option>
+						<option value="B">Bills/Utilities</option>
+						<option value="Sh">Shopping</option>
+						<option value="O">Other/Misc.</option>
+						<option value="Sa">Saving</option>
+					</select>
+					<button type=button class="btn-primary" onclick="AddSpending()">Add </button>
+				</div>
+				<br>	
+				<div>
+					<table class = "left" id = "entries" width = "200"> 
+						<tr>
+							<td>Spending Type</td>
+							<td> Amount</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div class="ml-auto col-md alert">
+				<h3 style = "text-align:center"> Spending Chart</h3>
+				<br>
+				<canvas id="myChart" width ="100" height = "100"></canvas>				
+			</div>
 		</div>
 		
-		<!-- Modal #1 - Configurations Modal -->
+		<br>
+	</div>
+	<!-- Modal #1 - Configurations Modal -->
 
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h5 class="modal-title" id="exampleModalLabel">Configurations</h5>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">&times;</span>
-		        </button>
-		      </div>
-		      <div class="modal-body center">
-				  <br>
-		      		<h4>Enter your information</h4>
-		      		<br>
-		      		<form class="form-inline">
-						<div class="form-group mx-sm-3 mb-2">
-			   				<label for="userIncome" class="sr-only">Enter Income</label>
-			  	 			<input class="form-control" id="userIncome" placeholder="Enter Yearly Income">
-		  				</div>
-			  			<button type="button" class="btn btn-warning mb-2" onclick = getIncome()>Submit</button>
-			  			<!--<button type = "button" onclick =showIncome()>Click</button>-->
-			  			<br>
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Configurations</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body center">
+					<br>
+					<h4>Enter your information</h4>
+					<br>
+					<form class="form-inline">
+						<div class="form-group mx-sm-3 mb-2" >
+							<label for="userIncome" class="sr-only">Enter Income</label>
+							<input class="form-control" id="userIncome" placeholder="Enter Yearly Income">
+						</div>
+						<button type="button" class="btn btn-warning mb-2" onclick = getIncome()>Submit</button>
+						<!--<button type = "button" onclick =showIncome()>Click</button>-->
+						<br>
 					</form>
 					<h4> Budget Time Period </h4>
 
-		      		<div class="form-check">
-		      		  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-		      		  <label class="form-check-label" for="flexRadioDefault1">
-		      		    Yearly
-		      		  </label>
-		      		</div>
-		      		<div class="form-check">
-		      		  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked="checked">
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+						<label class="form-check-label" for="flexRadioDefault1">
+							Yearly
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked="checked">
 
-		      		  <label class="form-check-label" for="flexRadioDefault2">
-		      		    Monthly
-		      		  </label>
-		      		</div>
-		      		<div class="form-check">
-		      		  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-		      		  <label class="form-check-label" for="flexRadioDefault2">
-		      		    Weekly
-		      		  </label>
-		      		</div>
-		      		<br><br>
-		      		<h4>What is the Currency?</h4>
-		      		<br>
+						<label class="form-check-label" for="flexRadioDefault2">
+							Monthly
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+						<label class="form-check-label" for="flexRadioDefault2">
+							Weekly
+						</label>
+					</div>
+					<br><br>
+					<h4>What is the Currency?</h4>
+					<br>
 
-		       		<div id="dropdown" class="dropdown show">
-		       		  <a class="btn btn-warning dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		       		    Select Currency
-		       		  </a>
+					<div id="dropdown" class="dropdown show">
+						<a class="btn btn-warning dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Select Currency
+						</a>
 
-		       		  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id = "moneyDropdown">
-		       		    <li><a class="dropdown-item" href="#">USD</a></li>
-		       		    <li><a class="dropdown-item" href="#" value="EUR">EUR</a></li>
-		       		    <li><a class="dropdown-item" href="#">GBP</a></li>
-		       		    <li><a class="dropdown-item" href="#">CHF</a></li>
-		       		    <li><a class="dropdown-item" href="#">CAD</a></li>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id = "moneyDropdown">
+							<li><a class="dropdown-item" href="#">USD</a></li>
+							<li><a class="dropdown-item" href="#" value="EUR">EUR</a></li>
+							<li><a class="dropdown-item" href="#">GBP</a></li>
+							<li><a class="dropdown-item" href="#">CHF</a></li>
+							<li><a class="dropdown-item" href="#">CAD</a></li>
 
-		       		  </div>
-		       		</div>
-		       		<br><br>
+						</div>
+					</div>
+					<br><br>
 
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		        <button type="button" class="btn btn-primary" onclick="getCurrencyType()">Save changes</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-		<div>
-		<!--<span id="currencyTag">  <span>-->
-		<input class = "left" id = "Spending" placeholder = "0.00"></input> 
-		<select name="spendingType" id="spendingType">
-		  <option value="H">Housing</option>
-		  <option value="F">Food</option>
-		  <option value="T">Transporation</option>
-		  <option value="En">Entertainment</option>
-		  <option value="Ed"> Education </option>
-		  <option value="B">Bills/Utilities</option>
-		  <option value="Sh">Shopping</option>
-		  <option value="O">Other/Misc.</option>
-		  <option value="Sa">Saving</option>
-		</select>
-		<button type=button onclick="AddSpending()">Add </button>
-		</div>
-
-		<br>	
-		<div ><table class = "left" id = "entries" width = "200"> 
-			<tr>
-				<td>Spending Type</td>
-				<td> Amount</td>
-				
-			</tr>
-			
-					
-			
-
-		</table>
-	</div>
-	
-	<br>
-	<div class="container">
-		<div class="pieChart">
-			<canvas id="myChart" width ="400" height = "400"></canvas>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" onclick="getCurrencyType()">Save changes</button>
+				</div>
+			</div>
 		</div>
 	</div>
 
-	</body>
-	<script type="text/javascript">
-		$(".dropdown-menu li a").click(function(){
-		  $(".dropdown").find(".btn:first-child").html($(this).text()+' <span class="caret"></span>');
-		  console.log($('#moneyDropdown').val($(this).html()));
+</body>
+<script type="text/javascript">
+	$(".dropdown-menu li a").click(function(){
+		$(".dropdown").find(".btn:first-child").html($(this).text()+' <span class="caret"></span>');
+		console.log($('#moneyDropdown').val($(this).html()));
 
+	});
+</script>
+<script>
+	function chart(){
+		var ctx = document.getElementById("myChart");
+
+		var spending = [];
+		var keys = Object.keys(spendingPercentage);
+
+		var frameworks=[];
+		keys.forEach(function(key){
+			frameworks.push(spendingPercentage[key][0]);
+			spending.push(spendingPercentage[key][1]);
 		});
-	</script>
-	<script>
-		function chart(){
-			var ctx = document.getElementById("myChart");
+		console.log(spending);
 
-			var spending = [];
-			var keys = Object.keys(spendingPercentage);
-			
-			var frameworks=[];
-			keys.forEach(function(key){
-				frameworks.push(spendingPercentage[key][0]);
-				spending.push(spendingPercentage[key][1]);
-			});
-			console.log(spending);
+		var myChart = new Chart(ctx, {
+			type: "pie",
+			data: {
+				labels: frameworks,
+				datasets: [
+				{
+					label: "Spending",
+					data: spending,
+					backgroundColor: [
+					"rgba(255, 99, 132, 0.2)",
+					"rgba(54, 162, 235, 0.2)",
+					"rgba(255, 206, 86, 0.2)",
+					"rgba(75, 192, 192, 0.2)",
+					"rgba(153, 102, 255, 0.2)",
+					"rgba(36,179,87,0.2)",
+					"rgba(195,25,156,0.2)",
+					"rgba(200,221,93,0.2)"
+					],
+					borderColor: [
+					"rgba(255, 99, 132, 1)",
+					"rgba(54, 162, 235, 1)",
+					"rgba(255, 206, 86, 1)",
+					"rgba(75, 192, 192, 1)",
+					"rgba(153, 102, 255, 1)",
+					"rgba(36,179,87,1)",
+					"rgba(195,25,156,1)",
+					"rgba(200,221,93,1)"
 
-			var myChart = new Chart(ctx, {
-			  type: "pie",
-			  data: {
-			    labels: frameworks,
-			    datasets: [
-			      {
-			        label: "Spending",
-			        data: spending,
-			        backgroundColor: [
-			          "rgba(255, 99, 132, 0.2)",
-			          "rgba(54, 162, 235, 0.2)",
-			          "rgba(255, 206, 86, 0.2)",
-			          "rgba(75, 192, 192, 0.2)",
-			          "rgba(153, 102, 255, 0.2)",
-			          "rgba(36,179,87,0.2)",
-			          "rgba(195,25,156,0.2)",
-			          "rgba(200,221,93,0.2)"
-			        ],
-			        borderColor: [
-			          "rgba(255, 99, 132, 1)",
-			          "rgba(54, 162, 235, 1)",
-			          "rgba(255, 206, 86, 1)",
-			          "rgba(75, 192, 192, 1)",
-			          "rgba(153, 102, 255, 1)",
-			          "rgba(36,179,87,1)",
-			          "rgba(195,25,156,1)",
-			          "rgba(200,221,93,1)"
-
-			        ],
-			        borderWidth: 1
-			      }
-			    ]
-			  },
-			  options:{
-			  	maintainAspectRatio:false,
-			  	responsive:false
-			  }
-			});
+					],
+					borderWidth: 1
+				}
+				]
+			},
+			options:{
+				maintainAspectRatio:true,
+				responsive:true
+				
 			}
-	</script>
+		});
+	}
+	chart();
+</script>
 </html>
