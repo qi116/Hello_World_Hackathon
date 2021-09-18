@@ -18,6 +18,9 @@ function getIncome(){
 	console.log(incomeInput);
 }
 function getCurrencyType(){
-	console.log($('#moneyDropdown').val($(this).html()));
+	//currency = $('#moneyDropdown').val($(this).html());
+	//console.log($('#moneyDropdown').val($(this).text()));
+
+	console.log(currency);
 }
 
