@@ -30,12 +30,12 @@ function PutCurrency(){
 }
 function AddSpending(){
 	var money = document.getElementById("Spending").value;
-	if(money === "")money=0;
+	if(money === "")money=0.00;
 	var type = document.getElementById("spendingType");
 	var typeHold;
 	for(const [key,value] of Object.entries(spendingType)){
 		if(type.value.localeCompare(key)==0){
-			value[1]+=parseFloat(money);
+			value[1]+=parseFloat(money).toFixed(2);
 			typeHold=value[0];
 		}
 	}
@@ -47,7 +47,7 @@ function AddSpending(){
 
 	// Add some text to the new cells:
 	totalSpending+=parseFloat(money);
-	amount.innerHTML = "$"+money;
+	amount.innerHTML = "$"+parseFloat(money).toFixed(2);
 	category.innerHTML = typeHold;
 	calculatePercentage();
 	chart();
