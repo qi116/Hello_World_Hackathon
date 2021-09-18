@@ -111,7 +111,6 @@
 		       		  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id = "moneyDropdown">
 		       		    <li><a class="dropdown-item" href="#">USD</a></li>
 		       		    <li><a class="dropdown-item" href="#" value="EUR">EUR</a></li>
-		       		    <option value="hello" class ="dropdown-item"> Hello WOrld </option>
 		       		    <li><a class="dropdown-item" href="#">GBP</a></li>
 		       		    <li><a class="dropdown-item" href="#">CHF</a></li>
 		       		    <li><a class="dropdown-item" href="#">CAD</a></li>
@@ -119,6 +118,7 @@
 		       		  </div>
 		       		</div>
 		       		<br><br>
+
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -127,14 +127,16 @@
 		    </div>
 		  </div>
 		</div>
-
+		<div style="text-align:center">
+		<input id = "Spending" placeholder = "0.00"></input> 
+		</div>
 	</body>
 	<script type="text/javascript">
 		$(".dropdown-menu li a").click(function(){
 		  $(".btn:first-child").html($(this).text()+' <span class="caret"></span>');
-		  
+		  console.log($('#moneyDropdown').val($(this).html()));
+
 		});
 
 	</script>
 </html>
-BIG DICKS
