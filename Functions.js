@@ -5,6 +5,7 @@ var totalBudget = 0;
 
 
 var spendingType = {
+
 	"Housing:0, Food/Drink:0, Education, Bills/Utilities, Shopping, Entertainment, Other"};
 
 
