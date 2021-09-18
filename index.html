@@ -191,7 +191,7 @@
 		var frameworks=[];
 		keys.forEach(function(key){
 			frameworks.push(spendingPercentage[key][0]);
-			spending.push(spendingPercentage[key][1]);
+			spending.push(spendingPercentage[key][1].toFixed(2));
 		});
 		console.log(spending);
 
