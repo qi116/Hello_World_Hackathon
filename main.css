@@ -4,3 +4,18 @@
 	margin-left: 100;
 	text-align: left;
 }
+.modal-body{
+	background-color: black;
+
+}
+h4 {
+	text-align: center;
+	color: yellow;
+}
+#logo{
+	max-width: 10%;
+}
+
+body{
+	margin-bottom: 100;
+}
