@@ -5,17 +5,24 @@
 	text-align: left;
 }
 .modal-body{
-	background-color: black;
+	background-color: #343A40;
 
 }
 
 h4 {
-	text-align: center;
-	color: yellow;
+	color: white;
 }
 #logo{
 	max-width: 10%;
 }
 body{
 	margin-bottom: 100;
+}
+.form-check{
+	color: white;
+	text-align: center;
+}
+
+.center {
+	text-align: center;
 }
