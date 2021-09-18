@@ -7,5 +7,6 @@ function makeWord(){
 }
 function getIncome(){
 	var incomeInput = document.getElementById("userIncome").value;
+	income = incomeInput
 	console.log(incomeInput);
 }
