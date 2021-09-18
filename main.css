@@ -4,3 +4,11 @@
 	margin-left: 100;
 	text-align: left;
 }
+.modal-body{
+	background-color: black;
+
+}
+h4 {
+	text-align: center;
+	color: yellow;
+}
