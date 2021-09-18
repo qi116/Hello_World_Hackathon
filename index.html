@@ -13,6 +13,7 @@
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		  <a class="navbar-brand" href="#">BudgeMe</a>
+		  <img src = "BudgeMeLogo.png" id = "logo" class = "epicLogo">
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
@@ -43,7 +44,7 @@
 		    </form>
 		  </div>
 		</nav>
-		<img src = "BudgeMeLogo.png" id = "logo" class = "epicLogo"> 
+		 
 		<div class="left">
 			<br>
 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -103,7 +104,7 @@
 		      		<h4>What is the Currency?</h4>
 		      		<br>
 
-		       		<div class="dropdown show">
+		       		<div id="dropdown" class="dropdown show">
 		       		  <a class="btn btn-warning dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		       		    Select Currency
 		       		  </a>
@@ -161,7 +162,7 @@
 	</body>
 	<script type="text/javascript">
 		$(".dropdown-menu li a").click(function(){
-		  $(".btn:first-child").html($(this).text()+' <span class="caret"></span>');
+		  $(".dropdown").find(".btn:first-child").html($(this).text()+' <span class="caret"></span>');
 		  console.log($('#moneyDropdown').val($(this).html()));
 
 		});
