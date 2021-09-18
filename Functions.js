@@ -3,7 +3,7 @@ var monthlySpending;
 var currency = "USD";
 var totalBudget = 0;
 var totalSpending=0;
-
+//var spending = [];
 //dictionary of all spending types
 var spendingType = {"H" :["Housing", 0], "F":["Food/Drink", 0], "T" : ["Transportation",0], "Ed" : ["Education", 0],
  "Sh" : ["Shopping", 0], "B" : ["Bills/Utilities",0], "En" : ["Entertainment",0], "O" :["Other",0], "Sa" : ["Savings", 0] };
@@ -49,14 +49,15 @@ function AddSpending(){
 	totalSpending+=parseFloat(money);
 	amount.innerHTML = "$"+money;
 	category.innerHTML = typeHold;
-	
+	calculatePercentage();
+	chart();
 }
 //PutCurrency();
 
 function calculatePercentage(){
 	for(const [key,value] of Object.entries(spendingPercentage)){
 		value[1] = parseFloat(spendingType[key][1])/totalSpending;
-		console.log(value[1]);
+		//console.log(value[1]);
 	}
 }
 
