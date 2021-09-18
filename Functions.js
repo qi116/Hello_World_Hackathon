@@ -4,8 +4,7 @@ var currency = "USD";
 var totalBudget = 0;
 
 
-var spendingType = {
-	"Housing:0, Food/Drink:0, Education, Bills/Utilities, Shopping, Entertainment, Other"};
+//var spendingType = {"Housing:0, Food/Drink:0, Education, Bills/Utilities, Shopping, Entertainment, Other"};
 
 
 function makeWord(){
@@ -23,4 +22,10 @@ function getCurrencyType(){
 
 	console.log(currency);
 }
+function PutCurrency(){
+	var paragraph = document.getElementById("currencyTag");
+	var text = document.createTextNode(currency);
+	paragraph.innerHTML = currency;
+	console.log("here");
 
+}
