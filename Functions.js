@@ -2,7 +2,7 @@ var income;
 var monthlySpending;
 var currency = "USD";
 var totalBudget = 0;
-
+var totalSpending=0;
 
 var spendingType = {"H" :["Housing", 0], "F":["Food/Drink", 0], "T" : ["Transportation",0], "Ed" : ["Education", 0],
  "Sh" : ["Shopping", 0], "B" : ["Bills/Utilities",0], "En" : ["Entertainment",0], "O" :["Other",0], "Sa" : ["Savings", 0] };  //dictionary of all spending types
@@ -32,6 +32,7 @@ function PutCurrency(){
 }
 function AddSpending(){
 	var money = document.getElementById("Spending").value;
+	if(money==="")money=0;
 	var type = document.getElementById("spendingType");
 	var typeHold;
 	for(const [key,value] of Object.entries(spendingType)){
@@ -40,16 +41,17 @@ function AddSpending(){
 			typeHold=value[0];
 		}
 	}
-	console.log(spendingType.F[1])
+	
 	var table = document.getElementById("entries")
 	var row =table.insertRow(1);
 	var amount = row.insertCell(0);
 	var category = row.insertCell(0);
 
 	// Add some text to the new cells:
+	totalSpending+=parseFloat(money);
 	amount.innerHTML = "$"+money;
-
 	category.innerHTML = typeHold;
+	
 }
 //PutCurrency();
 
