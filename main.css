@@ -1,9 +1,6 @@
 /*This is the styling*/
 
-.center {
-	text-align: center;
-	
-}
-.tr{
-	text-align:center;
+.left {
+	margin-left: 100;
+	text-align: left;
 }
