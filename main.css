@@ -6,7 +6,6 @@
 }
 .modal-body{
 	background-color: #343A40;
-
 }
 
 h4 {
@@ -24,5 +23,11 @@ body{
 }
 
 .center {
+	text-align: center;
+}
+.modal-content{
+	align-items: center;
+}
+.form-control{
 	text-align: center;
 }
