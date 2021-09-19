@@ -3,6 +3,7 @@
 .left {
 	margin-left: 100;
 	text-align: left;
+	font-weight: bolder;
 }
 .modal-body{
 	background-color: #343A40;
