@@ -15,10 +15,10 @@ function makeWord(){
 	word.style.display = "block";
 }
 
-function getIncome(){
-	var incomeInput = document.getElementById("userIncome").value;
-	income = incomeInput
-	console.log(incomeInput);
+function getBudget(){
+	var budgetInput = document.getElementById("userBudget").value;
+	totalBudget = parseFloat(budgetInput)
+	
 }
 
 function PutCurrency(){
@@ -35,7 +35,7 @@ function AddSpending(){
 	var typeHold;
 	for(const [key,value] of Object.entries(spendingType)){
 		if(type.value.localeCompare(key)==0){
-			value[1]+=parseFloat(money).toFixed(2);
+			value[1]+=parseFloat(money);
 			typeHold=value[0];
 		}
 	}
@@ -51,14 +51,22 @@ function AddSpending(){
 	category.innerHTML = typeHold;
 	calculatePercentage();
 	chart();
+	WriteAnalysis();
 }
 //PutCurrency();
 
 function calculatePercentage(){
 	for(const [key,value] of Object.entries(spendingPercentage)){
-		value[1] = parseFloat(spendingType[key][1])/totalSpending;
+		value[1] = 100*parseFloat(spendingType[key][1])/totalSpending;
 		//console.log(value[1]);
 	}
+}
+
+function WriteAnalysis(){
+	var analysis =document.getElementById("spending_analysis");
+	analysis.innerHTML= "Your total spending this period is: $" + totalSpending + ".";
+	var analysis2 = document.getElementById("spending_analysis2");
+	analysis.innerHTML = "";
 }
 
 function addToCSV(){

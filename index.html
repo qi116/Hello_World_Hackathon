@@ -39,7 +39,6 @@
 		    <!-- <form class="form-inline my-2 my-lg-0">
 		      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-<<<<<<< HEAD
 		  </form> -->
 		</div>
 	</nav>
@@ -55,7 +54,7 @@
 					<br><br>
 				</div>
 				<div>
-					<input class = "left" id = "Spending" placeholder = "0.00" type = "number"></input> 
+					<input class = "left" id = "Spending" placeholder = "0.00" type = "number" min="0"></input> 
 					<select name="spendingType" id="spendingType">
 						<option value="H">Housing</option>
 						<option value="F">Food</option>
@@ -67,7 +66,7 @@
 						<option value="O">Other/Misc.</option>
 						<option value="Sa">Saving</option>
 					</select>
-					<button type=button class="btn-warning" onclick="AddSpending()">Add </button>
+					<button type=button class="btn btn-warning" onclick="AddSpending()">Add </button>
 				</div>
 				<br>	
 				<div>
@@ -111,9 +110,9 @@
 					<form class="form-inline">
 						<div class="form-group mx-sm-3 mb-2" >
 							<label for="userIncome" class="sr-only">Enter Income</label>
-							<input class="form-control" id="userIncome" placeholder="Enter Yearly Income">
+							<input class="form-control" id="userBudget" placeholder="Enter Budget (USD)">
 						</div>
-						<button type="button" class="btn btn-warning mb-2" onclick = getIncome()>Submit</button>
+						<!-- <button type="button" class="btn btn-warning mb-2" onclick = getIncome()>Submit</button> -->
 						<!--<button type = "button" onclick =showIncome()>Click</button>-->
 						<br>
 					</form>
@@ -139,15 +138,15 @@
 		      		  </label>
 		      		</div>
 		      		<br><br>
-		      		<h4>What is the Currency?</h4>
+		      		<!-- <h4>What is the Currency?</h4>
 		      		<br>
 
 		       		<div id="dropdown" class="dropdown show">
 		       		  <a class="btn btn-warning dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		       		    Select Currency
 		       		  </a>
-
-		       		  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id = "moneyDropdown">
+ -->
+		       		  <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id = "moneyDropdown">
 		       		    <li><a class="dropdown-item" href="#">USD</a></li>
 		       		    <li><a class="dropdown-item" href="#" value="EUR">EUR</a></li>
 		       		    <li><a class="dropdown-item" href="#">GBP</a></li>
@@ -155,13 +154,13 @@
 		       		    <li><a class="dropdown-item" href="#">CAD</a></li>
 
 		       		  </div>
-		       		</div>
+		       		</div> -->
 		       		<br><br>
 
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		        <button type="button" class="btn btn-warning" onclick="getCurrencyType()">Save changes</button>
+		        <button type="button" class="btn btn-warning" onclick="getBudget()">Save changes</button>
 		      </div>
 		    </div>
 		  </div>
@@ -177,9 +176,10 @@
 			<canvas id="myChart" width ="100" height = "50"></canvas>
 		</div>
 	</div>
-
-	<h3 class="center"> Analysis </h3>
-
+	<div class = "center">
+		<h3 > Analysis </h3>
+		<p id = "spending_analysis"> Your total spending this period is $0 </p>
+	</div>
 </body>
 <script type="text/javascript">
 	$(".dropdown-menu li a").click(function(){
