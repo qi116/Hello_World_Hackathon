@@ -6,7 +6,6 @@ BudgeMe is a budget planner that provides a breakdown of your spending through p
 
 ## Features
 
-- Configure the planner for many popular currencies
 - Allows for the user to modify the time period that the budget spans
 - Interactive user interface allows for input of spending for time period
 - Updates budget remaining as user inputs money spent
