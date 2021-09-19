@@ -22,7 +22,10 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">			  
 			<ul class=" nav navbar-nav ml-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="#">About Us</a>
+					<!-- <button data-target="AboutUsModal">About Us</button> -->
+					<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#AboutUsModal">
+						Budget
+					</button>
 				</li>
 		      <!-- <li class="nav-item dropdown">
 		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -101,7 +104,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Configurations</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Budget</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -172,7 +175,48 @@
 		<!--<span id="currencyTag">  <span>-->
 		
 	</div>
-	
+	<!-- About us modal -->
+	<div class="modal fade" id="AboutUsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">About Us</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body center">
+					<br>
+					
+		      		<br><br>
+		      		<!-- <h4>What is the Currency?</h4>
+		      		<br>
+
+		       		<div id="dropdown" class="dropdown show">
+		       		  <a class="btn btn-warning dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		       		    Select Currency
+		       		  </a>
+ -->
+		       		  <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id = "moneyDropdown">
+		       		    <li><a class="dropdown-item" href="#">USD</a></li>
+		       		    <li><a class="dropdown-item" href="#" value="EUR">EUR</a></li>
+		       		    <li><a class="dropdown-item" href="#">GBP</a></li>
+		       		    <li><a class="dropdown-item" href="#">CHF</a></li>
+		       		    <li><a class="dropdown-item" href="#">CAD</a></li>
+
+		       		  </div>
+		       		</div> -->
+		       		<br><br>
+
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-warning" onclick="getBudget()">Save changes</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div>
 	<br>
 	<div class="container">
 		<div class="pieChart">
