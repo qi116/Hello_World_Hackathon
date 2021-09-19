@@ -2,7 +2,7 @@ var income;
 var monthlySpending;
 var currency = "USD";
 var totalBudget = 0;
-var totalSpending=0;
+var totalSpending=parseFloat(0);
 //var spending = [];
 //dictionary of all spending types
 var spendingType = {"H" :["Housing", 0], "F":["Food/Drink", 0], "T" : ["Transportation",0], "Ed" : ["Education", 0],
@@ -66,7 +66,7 @@ function WriteAnalysis(){
 	var analysis =document.getElementById("spending_analysis");
 	analysis.innerHTML= "Your total spending this period is: $" + totalSpending + ".";
 	var analysis2 = document.getElementById("spending_analysis2");
-	analysis.innerHTML = "";
+	analysis2.innerHTML = "You have $" + number.toString(totalBudget-totalSpending) + " remaining of your  $"+ totalBudget+ " budget.";
 }
 
 function addToCSV(){
