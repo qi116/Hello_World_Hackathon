@@ -11,7 +11,7 @@
 	<script src="Functions.js"></script>
 </head>
 
-<body style="background-color:#4D535A ;">
+<body style="background-color:#525456; ;">
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
 		<img src = "BudgeMeLogo-2.png" id = "logo" class = "epicLogo" >
@@ -48,7 +48,7 @@
 				<div class="left">
 					<br>
 					<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
-						Configure
+						Budget
 					</button>
 					<p id="word" style="display: none;">This will appear</p>
 					<br><br>
@@ -72,11 +72,12 @@
 				<div>
 					<style>
 					table, th, td{
-						border: 1px solid black;
+						border: 1px solid white;
+						text-align: center;
 					}
 					</style>
 
-					<table class = "left" id = "entries" width = "200"> 
+					<table class = "left" id = "entries" width = "200" style = "color:white"> 
 						<tr>
 							<td>Spending Type</td>
 							<td> Amount</td>
@@ -87,7 +88,7 @@
 			</div>
 
 			<div class="ml-auto col-md alert">
-				<h3 style = "text-align:center"> Spending Chart</h3>
+				<h3 style = "text-align:center;color:white"> Spending Chart</h3>
 				<br>
 				<canvas id="myChart" width ="100" height = "100"></canvas>				
 			</div>
@@ -179,7 +180,7 @@
 		</div>
 	</div>
 	<div class = "center">
-		<h3 > Analysis </h3>
+		<h3 style="color:white;"> Analysis </h3>
 		<p id = "spending_analysis"> Your total spending this period is $0 </p>
 		<p id = "spending_analysis2"> </p>
 	</div>

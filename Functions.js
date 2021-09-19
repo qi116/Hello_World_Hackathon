@@ -3,7 +3,7 @@ var monthlySpending;
 var currency = "USD";
 var totalBudget = 0;
 var totalSpending=parseFloat(0);
-Chart.defaults.global.defaultFontColor = "black";
+Chart.defaults.global.defaultFontColor = "white";
 //var spending = [];
 //dictionary of all spending types
 var spendingType = {"H" :["Housing", 0], "F":["Food/Drink", 0], "T" : ["Transportation",0], "Ed" : ["Education", 0],
