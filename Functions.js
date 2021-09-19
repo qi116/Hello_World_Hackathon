@@ -17,9 +17,12 @@ function makeWord(){
 }
 
 function getBudget(){
-	var budgetInput = document.getElementById("userBudget").value;
-	totalBudget = parseFloat(budgetInput)
-	
+	var budgetInput = parseFloat(document.getElementById("userBudget").value);
+	if(budgetInput>0)
+	{
+		totalBudget = budgetInput
+	}
+	WriteAnalysis();
 }
 
 function PutCurrency(){
@@ -67,7 +70,7 @@ function WriteAnalysis(){
 	var analysis =document.getElementById("spending_analysis");
 	analysis.innerHTML= "Your total spending this period is: $" + totalSpending + ".";
 	var analysis2 = document.getElementById("spending_analysis2");
-	analysis2.innerHTML = "You have $" + number.toString(totalBudget-totalSpending) + " remaining of your  $"+ totalBudget+ " budget.";
+	analysis2.innerHTML = "You have $" + (totalBudget-totalSpending).toString() + " remaining of your  $"+ totalBudget+ " budget.";
 }
 
 function addToCSV(){
